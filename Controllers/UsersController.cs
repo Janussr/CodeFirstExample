@@ -1,6 +1,10 @@
-﻿using CodeFirstProject.Models;
+﻿using CodeFirstProject.DbConnector;
+using CodeFirstProject.DTOs;
+using CodeFirstProject.Models;
+using CodeFirstProject.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeFirstProject.Controllers
 {
@@ -9,66 +13,99 @@ namespace CodeFirstProject.Controllers
     public class UsersController : ControllerBase
     {
 
-        private readonly UserContext _userContext;
+        private readonly UserService _userService;
 
-        public UsersController(UserContext userContext)
+        public UsersController(UserService userService)
         {
-            _userContext = userContext;
+            _userService = userService;
         }
 
 
         [HttpGet]
         [Route("GetUsers")]
-        public List<Users> GetUsers()
+        public IActionResult Get()
         {
-            return _userContext.Users.ToList();
+            var users = _userService.GetAllUsers();
+            return Ok(users);
         }
 
 
         [HttpGet]
-        [Route("getuser")]
-        public Users GetUser(int id)
+        [Route("getuserbyid")]
+        public IActionResult Get(int id)
         {
-            return _userContext.Users.Where(x => x.ID == id).FirstOrDefault();
+            try
+            {
+                var user = _userService.GetUserById(id);
+                if (user == null)
+                {
+                    return NotFound($"User not found with id {id}");
+                }
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
         [Route("AddUser")]
-        public string AddUser(Users users)
+        public IActionResult Post(UserDTO model)
         {
-            string response = string.Empty;
-            _userContext.Users.Add(users);
-            _userContext.SaveChanges();
-            return "Users added";
+            try
+            {
+                var user = _userService.AddUser(model);
+                return Ok("User created");
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
-
         [HttpPut]
-        [Route("UpdateUser")]
-        public string UpdateUser(Users users)
+        public IActionResult Put(int _userId, UserDTO model)
         {
-            _userContext.Entry(users).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _userContext.SaveChanges();
-            return "User updated";
+            if (model == null || model.UserId == 0)
+            {
+                if (model == null)
+                {
+                    return BadRequest("Model data is invalid");
+                }
+                else if (model.UserId == 0)
+                {
+                    return BadRequest($"User Id {model.UserId} is invalid");
+                }
+            }
+
+            var updatedProduct = _userService.UpdateUser(_userId, model);
+            if (updatedProduct == null)
+            {
+                return NotFound($"User not found with id {_userId}");
+            }
+
+            return Ok(updatedProduct);
         }
 
 
         [HttpDelete]
-        [Route("deleteUser")]
-        public string DeleteUser(int id)
+        public IActionResult Delete(int id)
         {
-            Users users = _userContext.Users.Where(u => u.ID == id).FirstOrDefault();
-            if (users != null)
+            try
             {
-                _userContext.Users.Remove(users);
-                _userContext.SaveChanges();
-                return "User deleted";
+                _userService.DeleteUser(id);
+
+                return Ok("User deleted.");
             }
-            else
+            catch (Exception ex)
             {
-                return "No user found";
+                return BadRequest(ex.Message);
             }
         }
+
 
     }
 }

@@ -2,11 +2,11 @@
 
 namespace CodeFirstProject.Models
 {
-    public class Users
+    public class User
     {
 
         [Key]
-        public int ID { get; set; }
+        public int UserId { get; set; }
         public string? Name { get; set; }
         public string? ContactNo { get; set; }
     }

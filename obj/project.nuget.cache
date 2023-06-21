@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nNUYHpJTTdTn9ELvXRuDiWn5ygpyJy5gEgjKwGzAg4A5tFYAmP7u2MkxEUXr7hVPlAHHgOykiPXgd2Jz+Z8nLQ==",
+  "dgSpecHash": "eMsqb37XHuO3X7PEixI+VBJkfXKs8iXS2RpdEDiuAeY99+TB4YZRen3LL9VAvb4unTVKYqMuoXwk70VNNApq4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Janus\\source\\repos\\CodeFirstProject\\CodeFirstProject.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Janus\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -13,7 +14,7 @@
     "C:\\Users\\Janus\\.nuget\\packages\\microsoft.aspnet.webapi.cors\\5.2.9\\microsoft.aspnet.webapi.cors.5.2.9.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.7\\microsoft.aspnetcore.openapi.7.0.7.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\Janus\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Janus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.2\\microsoft.data.sqlclient.5.0.2.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\Janus\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.7\\microsoft.entityframeworkcore.7.0.7.nupkg.sha512",

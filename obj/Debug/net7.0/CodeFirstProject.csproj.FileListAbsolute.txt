@@ -74,3 +74,10 @@ C:\Users\Janus\source\repos\CodeFirstProject\obj\Debug\net7.0\refint\CodeFirstPr
 C:\Users\Janus\source\repos\CodeFirstProject\obj\Debug\net7.0\CodeFirstProject.pdb
 C:\Users\Janus\source\repos\CodeFirstProject\obj\Debug\net7.0\CodeFirstProject.genruntimeconfig.cache
 C:\Users\Janus\source\repos\CodeFirstProject\obj\Debug\net7.0\ref\CodeFirstProject.dll
+C:\Users\Janus\source\repos\CodeFirstProject\bin\Debug\net7.0\System.Web.Cors.dll
+C:\Users\Janus\source\repos\CodeFirstProject\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+C:\Users\Janus\source\repos\CodeFirstProject\bin\Debug\net7.0\System.Web.Http.dll
+C:\Users\Janus\source\repos\CodeFirstProject\bin\Debug\net7.0\System.Web.Http.Cors.dll
+C:\Users\Janus\source\repos\CodeFirstProject\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Janus\source\repos\CodeFirstProject\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\Janus\source\repos\CodeFirstProject\bin\Debug\net7.0\AutoMapper.dll
